@@ -12,11 +12,11 @@
 --side: ITOP side-view
 --top: ITOP top-view
 
-mode = "train"
-db = "ICVL"
+mode = "test"
+db = "NYU"
 resume = false
 resume_epoch = 0
-model_name = "model.net"
+model_name = "model_autosave"
 epochLimit = 10
 nThread = 6
 nGPU = 1
@@ -36,6 +36,8 @@ lr = 2.5e-4
 aph = 0.99
 eps = 1e-8
 batchSz = 1
+
+seq_length=3
 
 --predmade grid tensor
 d3Output_x = torch.view(torch.range(1,croppedSz/poolFactor),1,1,croppedSz/poolFactor):repeatTensor(croppedSz/poolFactor,croppedSz/poolFactor,1):type('torch.CudaTensor')
